@@ -1,3 +1,4 @@
+using Razor.Models;
 using Razor.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
 
+builder.Services.AddDbContext<DataContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
