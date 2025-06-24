@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddSingleton<IEmployeeRepository, MockEmployeeRepository>();
+builder.Services.AddTransient<IEmployeeRepository, SQLEmployeeRepository>();
 
 builder.Services.AddDbContext<DataContext>();
 var app = builder.Build();
