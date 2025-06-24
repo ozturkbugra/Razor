@@ -26,5 +26,18 @@ namespace Razor.Repository
         {
             return _employeeList.FirstOrDefault(x=> x.Id == id);
         }
+
+        public Employee Update(Employee entity)
+        {
+            Employee employee = _employeeList.FirstOrDefault(x => x.Id == entity.Id);
+
+            if(employee != null)
+            {
+                employee.Name = entity.Name;
+                employee.Email = entity.Email;
+                employee.Department = entity.Department;
+            }
+            return employee;
+        }
     }
 }

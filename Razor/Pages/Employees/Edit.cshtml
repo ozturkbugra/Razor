@@ -1,0 +1,29 @@
+﻿@page "{id}"
+@model EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Employee.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Employee.Name" class="form-label">Adı</label>
+        <input class="form-control" asp-for="Employee.Name">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Employee.Email" class="form-label">Mail</label>
+        <input class="form-control" asp-for="Employee.Email">
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Employee.Department" class="form-label">Departman</label>
+        <input class="form-control" asp-for="Employee.Department">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
