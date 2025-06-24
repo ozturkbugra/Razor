@@ -14,9 +14,16 @@ namespace Razor.Pages.Employees
             _employeeRepository = employeeRepository;
         }
         public Employee Employee { get; set; }
-        public void OnGet(int id)
+        public IActionResult OnGet(int id)
         {
             Employee = _employeeRepository.GetById(id);
+
+            if(Employee == null)
+            {
+                return RedirectToPage("/NotFound");
+            }
+
+            return Page();
         }
     }
 }
