@@ -21,5 +21,10 @@ namespace Razor.Repository
         {
             return _employeeList;
         }
+
+        public Employee GetById(int id)
+        {
+            return _employeeList.FirstOrDefault(x=> x.Id == id);
+        }
     }
 }
